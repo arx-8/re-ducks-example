@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c2f341fd-8d08-41f4-8a97-622020bd1584/deploy-status)](https://app.netlify.com/sites/focused-bhabha-aa792f/deploys)
+
+* * *
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
