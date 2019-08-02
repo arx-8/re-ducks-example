@@ -15,6 +15,10 @@ module.exports = {
     "plugin:prettier/recommended",
     "react-app",
   ],
+  plugins: [
+    // CircleCI で warn も検知可能にするため、全て error にする
+    "only-error",
+  ],
   rules: {
     "import/no-default-export": "error",
     "jest/lowercase-name": "off",
