@@ -56,6 +56,11 @@ npm i ${PACKAGE_NAME} && npm run typesync && npm i
 Analyzing the bundle size.<br>
 Output to `misc/source-map-explorer.html`.
 
+### `npm run eslint-print-config`
+
+Outputs the configuration to be used for the file passed.<br>
+See [`ESLint --print-config`](https://eslint.org/docs/user-guide/command-line-interface#--print-config)
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
