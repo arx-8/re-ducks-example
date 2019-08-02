@@ -51,6 +51,11 @@ If you want to install together, you can use this
 npm i ${PACKAGE_NAME} && npm run typesync && npm i
 ```
 
+### `GENERATE_SOURCEMAP=true npm run analyze`
+
+Analyzing the bundle size.<br>
+Output to `misc/source-map-explorer.html`.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
