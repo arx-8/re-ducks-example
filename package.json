@@ -11,8 +11,10 @@
     "react-dom": "16.8.6"
   },
   "devDependencies": {
+    "@types/eslint-plugin-prettier": "2.2.0",
     "@types/jest": "24.0.16",
     "@types/node": "12.6.9",
+    "@types/prettier": "1.18.1",
     "@types/react": "16.8.24",
     "@types/react-dom": "16.8.5",
     "eslint-config-prettier": "6.0.0",
@@ -22,7 +24,8 @@
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.3"
+    "typescript": "3.5.3",
+    "typesync": "0.5.2"
   },
   "scripts": {
     "build": "react-scripts build",
@@ -32,7 +35,8 @@
     "lint-dry": "npm-run-all --parallel lint:eslint-dry lint:tsc",
     "lint": "npm-run-all --parallel lint:eslint lint:tsc",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "typesync": "typesync"
   },
   "eslintConfig": {
     "extends": "react-app"
