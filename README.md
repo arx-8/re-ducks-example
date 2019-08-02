@@ -41,6 +41,26 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+### `npm run typesync`
+
+Install missing TypeScript typings for dependencies.
+
+If you want to install together, you can use this
+
+```sh
+npm i ${PACKAGE_NAME} && npm run typesync && npm i
+```
+
+### `GENERATE_SOURCEMAP=true npm run analyze`
+
+Analyzing the bundle size.<br>
+Output to `misc/source-map-explorer.html`.
+
+### `npm run eslint-print-config`
+
+Outputs the configuration to be used for the file passed.<br>
+See [`ESLint --print-config`](https://eslint.org/docs/user-guide/command-line-interface#--print-config)
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
