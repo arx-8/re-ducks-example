@@ -9,6 +9,10 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:jest/all",
+    /** @see https://github.com/prettier/eslint-config-prettier#installation */
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended",
     "react-app",
   ],
   rules: {
@@ -18,6 +22,14 @@ module.exports = {
     "no-console": "off",
     "no-var": "error",
     "prefer-const": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        arrowParens: "always",
+        semi: false,
+        trailingComma: "es5",
+      },
+    ],
     "react/jsx-boolean-value": "error",
     // jsx pragma に @emotion/core#jsx を使っている場合、Short Syntax 使えないため
     "react/jsx-fragments": ["error", "element"],
