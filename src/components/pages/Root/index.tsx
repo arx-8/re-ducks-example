@@ -7,14 +7,12 @@ type OwnProps = {
   children?: never
 }
 
-export const App: React.FC<OwnProps> = () => {
+export const Root: React.FC<OwnProps> = () => {
   return (
     <div css={root}>
       <header css={header}>
         <img css={logoCss} src={logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <p>Hello React</p>
         <a
           css={link}
           href="https://reactjs.org"

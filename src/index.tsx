@@ -1,19 +1,22 @@
-import { App } from "components/pages/App"
+import { Routes } from "components/helpers/Routes"
+import { Header } from "components/organisms/Header"
 import { GlobalStyles } from "components/styles/GlobalStyles"
 import React from "react"
 import ReactDOM from "react-dom"
+import { HashRouter as Router } from "react-router-dom"
 import * as serviceWorker from "./serviceWorker"
 
-const Root: React.FC = () => {
+const App: React.FC = () => {
   return (
-    <React.Fragment>
+    <Router>
       <GlobalStyles />
-      <App />
-    </React.Fragment>
+      <Header />
+      <Routes />
+    </Router>
   )
 }
 
-ReactDOM.render(<Root />, document.getElementById("root"))
+ReactDOM.render(<App />, document.getElementById("root"))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
