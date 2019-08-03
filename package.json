@@ -7,6 +7,7 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@emotion/core": "10.0.15",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
