@@ -3,16 +3,22 @@ import { Header } from "components/organisms/Header"
 import { GlobalStyles } from "components/styles/GlobalStyles"
 import React from "react"
 import ReactDOM from "react-dom"
+import { Provider as ReduxProvider } from "react-redux"
 import { HashRouter as Router } from "react-router-dom"
+import { configureStore } from "store/store"
 import * as serviceWorker from "./serviceWorker"
+
+const reduxStore = configureStore(window.__REDUX_INITIAL_STATE__)
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <GlobalStyles />
-      <Header />
-      <Routes />
-    </Router>
+    <ReduxProvider store={reduxStore}>
+      <Router>
+        <GlobalStyles />
+        <Header />
+        <Routes />
+      </Router>
+    </ReduxProvider>
   )
 }
 
