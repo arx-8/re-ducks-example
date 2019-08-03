@@ -10,7 +10,8 @@
     "@emotion/core": "10.0.15",
     "emotion-normalize": "10.1.0",
     "react": "16.8.6",
-    "react-dom": "16.8.6"
+    "react-dom": "16.8.6",
+    "react-router-dom": "5.0.1"
   },
   "devDependencies": {
     "@types/eslint-plugin-prettier": "2.2.0",
@@ -19,6 +20,7 @@
     "@types/prettier": "1.18.1",
     "@types/react": "16.8.24",
     "@types/react-dom": "16.8.5",
+    "@types/react-router-dom": "4.3.4",
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-jest": "22.14.1",
     "eslint-plugin-only-error": "1.0.2",
