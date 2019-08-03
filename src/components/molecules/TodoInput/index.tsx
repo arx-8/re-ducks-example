@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import React, { useState } from "react"
+import React, { useState, FormEventHandler } from "react"
 
 type OwnProps = {
   children?: never
@@ -10,7 +10,9 @@ type OwnProps = {
 export const TodoInput: React.FC<OwnProps> = ({ onSubmit }) => {
   const [value, setValue] = useState("")
 
-  const onSubmitWrapper = (): void => {
+  const onSubmitWrapper: FormEventHandler = (e) => {
+    // @see https://github.com/ReactTraining/react-router/issues/1933#issuecomment-140158983
+    e.preventDefault()
     onSubmit(value)
     setValue("")
   }
