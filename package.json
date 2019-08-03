@@ -9,9 +9,11 @@
   "dependencies": {
     "@emotion/core": "10.0.15",
     "emotion-normalize": "10.1.0",
+    "immer": "3.2.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-router-dom": "5.0.1"
+    "react-router-dom": "5.0.1",
+    "ulid": "2.3.0"
   },
   "devDependencies": {
     "@types/eslint-plugin-prettier": "2.2.0",

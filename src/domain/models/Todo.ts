@@ -1,4 +1,5 @@
 import { Brand } from "types/Utils"
+import { ulid } from "ulid"
 
 export type TodoId = Brand<string, "TodoId">
 
@@ -22,4 +23,8 @@ export const VisibilityFilterValue: Record<
   active: "active",
   all: "all",
   completed: "completed",
+}
+
+export const createTodoId = (): TodoId => {
+  return ulid() as TodoId
 }
