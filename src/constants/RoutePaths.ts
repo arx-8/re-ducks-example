@@ -4,6 +4,6 @@
 export const RoutePath = {
   Root: "/",
   TodoAppPlainState: "/todo-app-plain-state",
-  TodoAppPlainRedux: "/todo-app-plain-redux",
+  TodoAppOldRedux: "/todo-app-old-redux",
   TodoAppReDucks: "/todo-app-re-ducks",
 }

@@ -1,5 +1,6 @@
 import { NotFound } from "components/pages/NotFound"
 import { Root } from "components/pages/Root"
+import { TodoAppOldRedux } from "components/pages/TodoAppOldRedux"
 import { TodoAppPlainState } from "components/pages/TodoAppPlainState"
 import { RoutePath } from "constants/RoutePaths"
 import React from "react"
@@ -17,6 +18,11 @@ export const Routes: React.FC<OwnProps> = () => {
         exact
         path={RoutePath.TodoAppPlainState}
         component={TodoAppPlainState}
+      />
+      <Route
+        exact
+        path={RoutePath.TodoAppOldRedux}
+        component={TodoAppOldRedux}
       />
 
       {/* No route */}
