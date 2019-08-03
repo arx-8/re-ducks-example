@@ -1,10 +1,19 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "index.css"
 import { App } from "components/pages/App"
 import * as serviceWorker from "./serviceWorker"
+import { GlobalStyles } from "components/styles/GlobalStyles"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+const Root: React.FC = () => {
+  return (
+    <React.Fragment>
+      <GlobalStyles />
+      <App />
+    </React.Fragment>
+  )
+}
+
+ReactDOM.render(<Root />, document.getElementById("root"))
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
