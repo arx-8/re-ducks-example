@@ -1,8 +1,8 @@
+import { App } from "components/pages/App"
+import { GlobalStyles } from "components/styles/GlobalStyles"
 import React from "react"
 import ReactDOM from "react-dom"
-import { App } from "components/pages/App"
 import * as serviceWorker from "./serviceWorker"
-import { GlobalStyles } from "components/styles/GlobalStyles"
 
 const Root: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React from "react"
-import logo from "assets/logo.svg"
 import { css, jsx } from "@emotion/core"
+import logo from "assets/logo.svg"
+import React from "react"
 
 type OwnProps = {
   children?: never
