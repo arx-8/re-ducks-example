@@ -2,6 +2,7 @@ import { NotFound } from "components/pages/NotFound"
 import { Root } from "components/pages/Root"
 import { TodoAppOldRedux } from "components/pages/TodoAppOldRedux"
 import { TodoAppPlainState } from "components/pages/TodoAppPlainState"
+import { TodoAppReDucks } from "components/pages/TodoAppReDucks"
 import { RoutePath } from "constants/RoutePaths"
 import React from "react"
 import { Route, Switch } from "react-router-dom"
@@ -24,6 +25,7 @@ export const Routes: React.FC<OwnProps> = () => {
         path={RoutePath.TodoAppOldRedux}
         component={TodoAppOldRedux}
       />
+      <Route exact path={RoutePath.TodoAppReDucks} component={TodoAppReDucks} />
 
       {/* No route */}
       <Route component={NotFound} />
