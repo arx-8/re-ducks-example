@@ -7,16 +7,17 @@ import {
   createStore,
   Store,
 } from "redux"
+import { todoAppOldReduxReducer, todoAppOldReduxState } from "./todoAppOldRedux"
 
 export type RootState = Readonly<{
-  // TODO define
+  todoAppOldRedux: todoAppOldReduxState
 }>
 
 export const configureStore = (
   initialState: Partial<RootState> = {}
 ): Store<RootState, AnyAction> => {
   const rootReducer = combineReducers<RootState>({
-    // TODO define
+    todoAppOldRedux: todoAppOldReduxReducer,
   })
 
   // Connect Chrome Redux DevTools, if installed.
