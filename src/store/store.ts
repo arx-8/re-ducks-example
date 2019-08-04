@@ -7,12 +7,15 @@ import {
   createStore,
   Store,
 } from "redux"
+import thunkMiddleWare from "redux-thunk"
+import { todoAppAsyncReducer, TodoAppAsyncState } from "./todoAppAsync"
 import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
 import { todoAppReDucksReducer, TodoAppReDucksState } from "./todoAppReDucks"
 
 export type RootState = Readonly<{
   todoAppOldRedux: TodoAppOldReduxState
   todoAppReDucks: TodoAppReDucksState
+  todoAppAsync: TodoAppAsyncState
 }>
 
 export const configureStore = (
@@ -21,6 +24,7 @@ export const configureStore = (
   const rootReducer = combineReducers<RootState>({
     todoAppOldRedux: todoAppOldReduxReducer,
     todoAppReDucks: todoAppReDucksReducer,
+    todoAppAsync: todoAppAsyncReducer,
   })
 
   // Connect Chrome Redux DevTools, if installed.
@@ -28,6 +32,7 @@ export const configureStore = (
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   const middleWares = []
+  middleWares.push(thunkMiddleWare)
   if (isDevelopment) {
     /* eslint-disable @typescript-eslint/no-var-requires */
     middleWares.push(require("redux-immutable-state-invariant").default())
