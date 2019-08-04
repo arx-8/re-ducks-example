@@ -7,10 +7,10 @@ import {
   createStore,
   Store,
 } from "redux"
-import { todoAppOldReduxReducer, todoAppOldReduxState } from "./todoAppOldRedux"
+import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
 
 export type RootState = Readonly<{
-  todoAppOldRedux: todoAppOldReduxState
+  todoAppOldRedux: TodoAppOldReduxState
 }>
 
 export const configureStore = (
