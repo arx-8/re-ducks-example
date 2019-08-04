@@ -7,3 +7,7 @@ export const filterTodoList = (state: State): Todo[] => {
   }
   return state.todoList.filter((t) => t.status === state.visibilityFilter)
 }
+
+export const isSomeLoading = (state: State): boolean => {
+  return Object.values(state.isLoading).some((isLoading) => isLoading)
+}

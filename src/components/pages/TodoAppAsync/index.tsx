@@ -12,10 +12,12 @@ import {
   todoAppAsyncSelectors,
 } from "store/todoAppAsync"
 import { MapThunkDispatchToPropsFunction } from "types/ReduxTypes"
+import { Loading } from "components/atoms/Loading"
 
 type ReduxStateProps = {
   todoList: readonly Todo[]
   visibilityFilter: VisibilityFilter
+  isSomeLoading: boolean
 }
 
 type ReduxDispatchProps = {
@@ -35,6 +37,7 @@ type Props = OwnProps & ReduxStateProps & ReduxDispatchProps
 const _TodoAppAsync: React.FC<Props> = ({
   todoList,
   visibilityFilter,
+  isSomeLoading,
   addTodo,
   changeTodoLabel,
   changeVisibilityFilter,
@@ -45,6 +48,13 @@ const _TodoAppAsync: React.FC<Props> = ({
     <div css={root}>
       <h1>TodoApp (re-ducks + async)</h1>
       <div>
+        {isSomeLoading ? (
+          <Loading exCss={[loadingIcon, loading]} isSpin />
+        ) : (
+          <Loading exCss={loadingIcon} />
+        )}
+      </div>
+      <div css={separator}>
         <TodoInput onSubmit={addTodo} />
       </div>
       <div css={separator}>
@@ -73,12 +83,21 @@ const separator = css`
   margin-top: 16px;
 `
 
+const loadingIcon = css`
+  font-size: x-large;
+`
+
+const loading = css`
+  color: #2196f3;
+`
+
 const mapStateToProps: MapStateToProps<ReduxStateProps, OwnProps, RootState> = (
   state
 ) => {
   return {
     todoList: todoAppAsyncSelectors.filterTodoList(state.todoAppAsync),
     visibilityFilter: state.todoAppAsync.visibilityFilter,
+    isSomeLoading: todoAppAsyncSelectors.isSomeLoading(state.todoAppAsync),
   }
 }
 
