@@ -4,7 +4,7 @@ import { TodoInput } from "components/molecules/TodoInput"
 import { TodoList } from "components/molecules/TodoList"
 import { VisibilityFilterInput } from "components/molecules/VisibilityFilterInput"
 import { Todo, TodoId, VisibilityFilter } from "domain/models/Todo"
-import React from "react"
+import React, { useEffect } from "react"
 import { connect, MapStateToProps } from "react-redux"
 import { RootState } from "store/store"
 import {
@@ -25,6 +25,7 @@ type ReduxDispatchProps = {
   changeTodoLabel: (targetId: TodoId, label: string) => void
   changeVisibilityFilter: (visibilityFilter: VisibilityFilter) => void
   deleteTodo: (targetId: TodoId) => void
+  fetchAllTodos: () => void
   toggleTodoStatus: (targetId: TodoId) => void
 }
 
@@ -42,8 +43,13 @@ const _TodoAppAsync: React.FC<Props> = ({
   changeTodoLabel,
   changeVisibilityFilter,
   deleteTodo,
+  fetchAllTodos,
   toggleTodoStatus,
 }) => {
+  useEffect(() => {
+    fetchAllTodos()
+  }, [fetchAllTodos])
+
   return (
     <div css={root}>
       <h1>TodoApp (re-ducks + async)</h1>
@@ -115,6 +121,7 @@ const mapDispatchToProps: MapThunkDispatchToPropsFunction<
       ),
     deleteTodo: (targetId) =>
       dispatch(todoAppAsyncOperations.deleteTodo({ targetId })),
+    fetchAllTodos: () => dispatch(todoAppAsyncOperations.fetchAllTodos()),
     toggleTodoStatus: (targetId) =>
       dispatch(todoAppAsyncOperations.toggleTodoStatus({ targetId })),
   }
