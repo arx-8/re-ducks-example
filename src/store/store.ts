@@ -7,6 +7,7 @@ import {
   createStore,
   Store,
 } from "redux"
+import thunkMiddleWare from "redux-thunk"
 import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
 import { todoAppReDucksReducer, TodoAppReDucksState } from "./todoAppReDucks"
 
@@ -28,6 +29,7 @@ export const configureStore = (
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
   const middleWares = []
+  middleWares.push(thunkMiddleWare)
   if (isDevelopment) {
     /* eslint-disable @typescript-eslint/no-var-requires */
     middleWares.push(require("redux-immutable-state-invariant").default())
