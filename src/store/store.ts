@@ -8,9 +8,11 @@ import {
   Store,
 } from "redux"
 import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
+import { todoAppReDucksReducer, TodoAppReDucksState } from "./todoAppReDucks"
 
 export type RootState = Readonly<{
   todoAppOldRedux: TodoAppOldReduxState
+  todoAppReDucks: TodoAppReDucksState
 }>
 
 export const configureStore = (
@@ -18,6 +20,7 @@ export const configureStore = (
 ): Store<RootState, AnyAction> => {
   const rootReducer = combineReducers<RootState>({
     todoAppOldRedux: todoAppOldReduxReducer,
+    todoAppReDucks: todoAppReDucksReducer,
   })
 
   // Connect Chrome Redux DevTools, if installed.
