@@ -15,7 +15,7 @@ export const Header: React.FC<OwnProps> = () => {
         TodoApp (Plain state)
       </Link>
       <Link css={[link, behind]} to={RoutePath.TodoAppOldRedux}>
-        TodoApp (Plain redux)
+        TodoApp (Old design redux)
       </Link>
       <Link css={[link, behind]} to={RoutePath.TodoAppReDucks}>
         TodoApp (re-ducks)

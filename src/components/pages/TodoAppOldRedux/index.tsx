@@ -94,7 +94,7 @@ const mapDispatchToProps: MapDispatchToPropsFunction<
 > = (dispatch) => {
   return {
     addTodo: (label) => {
-      return dispatch({
+      dispatch({
         type: todoAppOldReduxActionTypes.ADD_TODO,
         payload: {
           label,
