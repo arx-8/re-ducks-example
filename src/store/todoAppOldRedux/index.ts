@@ -3,4 +3,4 @@ import { reducer, State } from "./reducers"
 
 export const todoAppOldReduxActionTypes = ActionTypes
 export const todoAppOldReduxReducer = reducer
-export type todoAppOldReduxState = State
+export type TodoAppOldReduxState = State
