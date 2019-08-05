@@ -11,7 +11,10 @@ type OwnProps = {
 export const Header: React.FC<OwnProps> = () => {
   return (
     <header css={root}>
-      <Link css={link} to={RoutePath.TodoAppPlainState}>
+      <Link css={link} to={RoutePath.TodoAppOldPlainState}>
+        TodoApp (Old plain state)
+      </Link>
+      <Link css={[link, behind]} to={RoutePath.TodoAppPlainState}>
         TodoApp (Plain state)
       </Link>
       <Link css={[link, behind]} to={RoutePath.TodoAppOldRedux}>

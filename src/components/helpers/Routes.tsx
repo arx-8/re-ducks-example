@@ -1,6 +1,7 @@
 import { NotFound } from "components/pages/NotFound"
 import { Root } from "components/pages/Root"
 import { TodoAppAsync } from "components/pages/TodoAppAsync"
+import { TodoAppOldPlainState } from "components/pages/TodoAppOldPlainState"
 import { TodoAppOldRedux } from "components/pages/TodoAppOldRedux"
 import { TodoAppPlainState } from "components/pages/TodoAppPlainState"
 import { TodoAppReDucks } from "components/pages/TodoAppReDucks"
@@ -16,6 +17,11 @@ export const Routes: React.FC<OwnProps> = () => {
   return (
     <Switch>
       <Route exact path={RoutePath.Root} component={Root} />
+      <Route
+        exact
+        path={RoutePath.TodoAppOldPlainState}
+        component={TodoAppOldPlainState}
+      />
       <Route
         exact
         path={RoutePath.TodoAppPlainState}
