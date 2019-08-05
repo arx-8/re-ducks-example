@@ -74,7 +74,7 @@ export const TodoAppPlainState: React.FC<OwnProps> = () => {
       <div css={separator}>
         <VisibilityFilterInput
           filterValue={visibilityFilter}
-          onChange={(f) => setVisibilityFilter(f)}
+          onChange={setVisibilityFilter}
         />
       </div>
       <div css={separator}>
