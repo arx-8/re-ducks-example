@@ -7,6 +7,8 @@ import {
   createStore,
   Store,
 } from "redux"
+import immutableStateInvariantMiddleware from "redux-immutable-state-invariant"
+import { createSerializableStateInvariantMiddleware } from "redux-starter-kit"
 import thunkMiddleWare from "redux-thunk"
 import { todoAppAsyncReducer, TodoAppAsyncState } from "./todoAppAsync"
 import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
@@ -34,13 +36,8 @@ export const configureStore = (
   const middleWares = []
   middleWares.push(thunkMiddleWare)
   if (isDevelopment) {
-    /* eslint-disable @typescript-eslint/no-var-requires */
-    middleWares.push(require("redux-immutable-state-invariant").default())
-    const {
-      createSerializableStateInvariantMiddleware,
-    } = require("redux-starter-kit/dist/redux-starter-kit.esm")
+    middleWares.push(immutableStateInvariantMiddleware())
     middleWares.push(createSerializableStateInvariantMiddleware())
-    /* eslint-enable */
   }
 
   const store = createStore(
