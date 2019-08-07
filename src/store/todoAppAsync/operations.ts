@@ -1,9 +1,9 @@
 import * as todoAPIClient from "data/apis/TodoAPIClient"
 import { TodoId } from "domain/models/Todo"
-import { AppAsyncThunkAction } from "types/ReduxTypes"
+import { AppThunkAction } from "types/ReduxTypes"
 import * as actions from "./actions"
 
-export const addTodo = (payload: { label: string }): AppAsyncThunkAction => {
+export const addTodo = (payload: { label: string }): AppThunkAction => {
   return async (dispatch) => {
     dispatch(actions.addTodoStarted())
     await todoAPIClient.callPostTodo({
@@ -18,7 +18,7 @@ export const addTodo = (payload: { label: string }): AppAsyncThunkAction => {
 export const changeTodoLabel = (payload: {
   targetId: TodoId
   label: string
-}): AppAsyncThunkAction => {
+}): AppThunkAction => {
   return async (dispatch) => {
     dispatch(actions.updateTodoStarted())
     await todoAPIClient.callPutTodo({
@@ -32,9 +32,7 @@ export const changeTodoLabel = (payload: {
 
 export const changeVisibilityFilter = actions.changeVisibilityFilter
 
-export const deleteTodo = (payload: {
-  targetId: TodoId
-}): AppAsyncThunkAction => {
+export const deleteTodo = (payload: { targetId: TodoId }): AppThunkAction => {
   return async (dispatch) => {
     dispatch(actions.updateTodoStarted())
     await todoAPIClient.callDeleteTodo({ id: payload.targetId })
@@ -45,7 +43,7 @@ export const deleteTodo = (payload: {
 
 export const toggleTodoStatus = (payload: {
   targetId: TodoId
-}): AppAsyncThunkAction => {
+}): AppThunkAction => {
   return async (dispatch, getState) => {
     dispatch(actions.updateTodoStarted())
 
@@ -63,7 +61,7 @@ export const toggleTodoStatus = (payload: {
   }
 }
 
-export const fetchAllTodos = (): AppAsyncThunkAction => {
+export const fetchAllTodos = (): AppThunkAction => {
   return async (dispatch) => {
     dispatch(actions.fetchAllTodosStarted())
     const result = await todoAPIClient.callGetAllTodos()
