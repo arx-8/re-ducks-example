@@ -29,25 +29,17 @@ export type ActionCreatorWithPayload<T, P> = (
 ) => ActionWithPayload<T, P>
 
 /**
- * redux-thunk ASYNC action shorthand for this application.
+ * redux-thunk action shorthand for this application.
  *
- * ThunkAction の <R> を、デフォルトで Promise<void> にしてる理由は以下。
- * - 複雑化を避けるため、thunk を使う action は非同期処理のみとするため
- * - 複雑化を避けるため、Promise.resolve の結果を受け取って Component 側でロジックを実装することを防ぐため
+ * ThunkAction の <R> を void | Promise<void> に制約してる理由は、実装の複雑化を避けるため。
+ * 「Promise.resolve の結果を受け取って Component 側でロジックを実装」することを防ぐ。
+ * 基本的に、return の Promise すら使うべきではないため、型引数省略時のデフォルト値は void としている。
  *
- * @template TReturn type of return
- * @template TAction acceptable action type
- */
-export type AppAsyncThunkAction<
-  TReturn = Promise<void>,
-  TAction extends Action = AnyAction
-> = ThunkAction<TReturn, RootState, void, TAction>
-
-/**
- * redux-thunk SYNC action shorthand for this application.
+ * @template TReturn Type of return
+ * @template TAction Type of acceptable action
  */
 export type AppThunkAction<
-  TReturn = void,
+  TReturn extends void | Promise<void> = void,
   TAction extends Action = AnyAction
 > = ThunkAction<TReturn, RootState, void, TAction>
 
