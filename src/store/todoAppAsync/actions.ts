@@ -1,34 +1,36 @@
 import { Todo, VisibilityFilter } from "domain/models/Todo"
 import { ActionCreator, ActionCreatorWithPayload } from "types/ReduxTypes"
 
-export enum ActionTypes {
-  ADD_TODO_STARTED = "todoAppAsync/ADD_TODO_STARTED",
-  ADD_TODO_DONE = "todoAppAsync/ADD_TODO_DONE",
-  UPDATE_TODO_STARTED = "todoAppAsync/UPDATE_TODO_STARTED",
-  UPDATE_TODO_DONE = "todoAppAsync/UPDATE_TODO_DONE",
-  CHANGE_VISIBILITY_FILTER = "todoAppAsync/CHANGE_VISIBILITY_FILTER",
-  DELETE_TODO_STARTED = "todoAppAsync/DELETE_TODO_STARTED",
-  DELETE_TODO_DONE = "todoAppAsync/DELETE_TODO_DONE",
-  FETCH_ALL_TODOS_STARTED = "todoAppAsync/FETCH_ALL_TODOS_STARTED",
-  FETCH_ALL_TODOS_DONE = "todoAppAsync/FETCH_ALL_TODOS_DONE",
-}
+export const ActionTypes = {
+  ADD_TODO_STARTED: "todoAppAsync/ADD_TODO_STARTED",
+  ADD_TODO_DONE: "todoAppAsync/ADD_TODO_DONE",
+  UPDATE_TODO_STARTED: "todoAppAsync/UPDATE_TODO_STARTED",
+  UPDATE_TODO_DONE: "todoAppAsync/UPDATE_TODO_DONE",
+  CHANGE_VISIBILITY_FILTER: "todoAppAsync/CHANGE_VISIBILITY_FILTER",
+  DELETE_TODO_STARTED: "todoAppAsync/DELETE_TODO_STARTED",
+  DELETE_TODO_DONE: "todoAppAsync/DELETE_TODO_DONE",
+  FETCH_ALL_TODOS_STARTED: "todoAppAsync/FETCH_ALL_TODOS_STARTED",
+  FETCH_ALL_TODOS_DONE: "todoAppAsync/FETCH_ALL_TODOS_DONE",
+} as const
 
 export const addTodoStarted: ActionCreator<
-  ActionTypes.ADD_TODO_STARTED
+  typeof ActionTypes.ADD_TODO_STARTED
 > = () => {
   return {
     type: ActionTypes.ADD_TODO_STARTED,
   }
 }
 
-export const addTodoDone: ActionCreator<ActionTypes.ADD_TODO_DONE> = () => {
+export const addTodoDone: ActionCreator<
+  typeof ActionTypes.ADD_TODO_DONE
+> = () => {
   return {
     type: ActionTypes.ADD_TODO_DONE,
   }
 }
 
 export const updateTodoStarted: ActionCreator<
-  ActionTypes.UPDATE_TODO_STARTED
+  typeof ActionTypes.UPDATE_TODO_STARTED
 > = () => {
   return {
     type: ActionTypes.UPDATE_TODO_STARTED,
@@ -36,7 +38,7 @@ export const updateTodoStarted: ActionCreator<
 }
 
 export const updateTodoDone: ActionCreator<
-  ActionTypes.UPDATE_TODO_DONE
+  typeof ActionTypes.UPDATE_TODO_DONE
 > = () => {
   return {
     type: ActionTypes.UPDATE_TODO_DONE,
@@ -44,7 +46,7 @@ export const updateTodoDone: ActionCreator<
 }
 
 export const changeVisibilityFilter: ActionCreatorWithPayload<
-  ActionTypes.CHANGE_VISIBILITY_FILTER,
+  typeof ActionTypes.CHANGE_VISIBILITY_FILTER,
   {
     visibilityFilter: VisibilityFilter
   }
@@ -56,7 +58,7 @@ export const changeVisibilityFilter: ActionCreatorWithPayload<
 }
 
 export const deleteTodoStarted: ActionCreator<
-  ActionTypes.DELETE_TODO_STARTED
+  typeof ActionTypes.DELETE_TODO_STARTED
 > = () => {
   return {
     type: ActionTypes.DELETE_TODO_STARTED,
@@ -64,7 +66,7 @@ export const deleteTodoStarted: ActionCreator<
 }
 
 export const deleteTodoDone: ActionCreator<
-  ActionTypes.DELETE_TODO_DONE
+  typeof ActionTypes.DELETE_TODO_DONE
 > = () => {
   return {
     type: ActionTypes.DELETE_TODO_DONE,
@@ -72,7 +74,7 @@ export const deleteTodoDone: ActionCreator<
 }
 
 export const fetchAllTodosStarted: ActionCreator<
-  ActionTypes.FETCH_ALL_TODOS_STARTED
+  typeof ActionTypes.FETCH_ALL_TODOS_STARTED
 > = () => {
   return {
     type: ActionTypes.FETCH_ALL_TODOS_STARTED,
@@ -80,7 +82,7 @@ export const fetchAllTodosStarted: ActionCreator<
 }
 
 export const fetchAllTodosDone: ActionCreatorWithPayload<
-  ActionTypes.FETCH_ALL_TODOS_DONE,
+  typeof ActionTypes.FETCH_ALL_TODOS_DONE,
   {
     result: Todo[]
   }

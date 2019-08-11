@@ -15,7 +15,12 @@ export const initialState: State = {
 }
 
 type Action = {
-  type: ActionTypes
+  type:
+    | typeof ActionTypes.ADD_TODO
+    | typeof ActionTypes.CHANGE_TODO_LABEL
+    | typeof ActionTypes.CHANGE_VISIBILITY_FILTER
+    | typeof ActionTypes.DELETE_TODO
+    | typeof ActionTypes.TOGGLE_TODO_STATUS
   payload: Record<string, FixMeAny>
 }
 

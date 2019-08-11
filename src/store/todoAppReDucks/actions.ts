@@ -1,16 +1,16 @@
 import { ActionCreatorWithPayload } from "types/ReduxTypes"
 import { TodoId, VisibilityFilter } from "domain/models/Todo"
 
-export enum ActionTypes {
-  ADD_TODO = "todoAppReDucks/ADD_TODO",
-  CHANGE_TODO_LABEL = "todoAppReDucks/CHANGE_TODO_LABEL",
-  CHANGE_VISIBILITY_FILTER = "todoAppReDucks/CHANGE_VISIBILITY_FILTER",
-  DELETE_TODO = "todoAppReDucks/DELETE_TODO",
-  TOGGLE_TODO_STATUS = "todoAppReDucks/TOGGLE_TODO_STATUS",
-}
+export const ActionTypes = {
+  ADD_TODO: "todoAppReDucks/ADD_TODO",
+  CHANGE_TODO_LABEL: "todoAppReDucks/CHANGE_TODO_LABEL",
+  CHANGE_VISIBILITY_FILTER: "todoAppReDucks/CHANGE_VISIBILITY_FILTER",
+  DELETE_TODO: "todoAppReDucks/DELETE_TODO",
+  TOGGLE_TODO_STATUS: "todoAppReDucks/TOGGLE_TODO_STATUS",
+} as const
 
 export const addTodo: ActionCreatorWithPayload<
-  ActionTypes.ADD_TODO,
+  typeof ActionTypes.ADD_TODO,
   {
     label: string
   }
@@ -22,7 +22,7 @@ export const addTodo: ActionCreatorWithPayload<
 }
 
 export const changeTodoLabel: ActionCreatorWithPayload<
-  ActionTypes.CHANGE_TODO_LABEL,
+  typeof ActionTypes.CHANGE_TODO_LABEL,
   {
     targetId: TodoId
     label: string
@@ -35,7 +35,7 @@ export const changeTodoLabel: ActionCreatorWithPayload<
 }
 
 export const changeVisibilityFilter: ActionCreatorWithPayload<
-  ActionTypes.CHANGE_VISIBILITY_FILTER,
+  typeof ActionTypes.CHANGE_VISIBILITY_FILTER,
   {
     visibilityFilter: VisibilityFilter
   }
@@ -47,7 +47,7 @@ export const changeVisibilityFilter: ActionCreatorWithPayload<
 }
 
 export const deleteTodo: ActionCreatorWithPayload<
-  ActionTypes.DELETE_TODO,
+  typeof ActionTypes.DELETE_TODO,
   {
     targetId: TodoId
   }
@@ -59,7 +59,7 @@ export const deleteTodo: ActionCreatorWithPayload<
 }
 
 export const toggleTodoStatus: ActionCreatorWithPayload<
-  ActionTypes.TOGGLE_TODO_STATUS,
+  typeof ActionTypes.TOGGLE_TODO_STATUS,
   {
     targetId: TodoId
   }

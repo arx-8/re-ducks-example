@@ -29,7 +29,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     }
   }
 
-  private addTodo = (label: string): void => {
+  private readonly addTodo = (label: string): void => {
     this.setState((prev) => ({
       todoList: prev.todoList.concat({
         id: createTodoId(),
@@ -39,13 +39,18 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     }))
   }
 
-  private setVisibilityFilter = (filterValue: VisibilityFilter): void => {
+  private readonly setVisibilityFilter = (
+    filterValue: VisibilityFilter
+  ): void => {
     this.setState({
       visibilityFilter: filterValue,
     })
   }
 
-  private changeTodoLabel = (targetId: TodoId, label: string): void => {
+  private readonly changeTodoLabel = (
+    targetId: TodoId,
+    label: string
+  ): void => {
     this.setState((prev) => {
       const next = [...prev.todoList]
       next.find((t) => t.id === targetId)!.label = label
@@ -55,7 +60,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private deleteTodo = (targetId: TodoId) => {
+  private readonly deleteTodo = (targetId: TodoId) => {
     this.setState((prev) => {
       const next = prev.todoList.filter((t) => t.id !== targetId)
       return {
@@ -64,7 +69,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private toggleTodoStatus = (targetId: TodoId) => {
+  private readonly toggleTodoStatus = (targetId: TodoId) => {
     this.setState((prev) => {
       const next = [...prev.todoList]
       const found = next.find((t) => t.id === targetId)!
