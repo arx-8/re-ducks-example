@@ -6,6 +6,7 @@ jobs:
     docker:
       - image: circleci/node:12.7.0
     steps:
+      # @see https://circleci.com/docs/2.0/caching/#source-caching
       - restore_cache:
           keys:
             - source-v1-{{ .Branch }}-{{ .Revision }}
@@ -16,13 +17,20 @@ jobs:
           key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
             - .git
+
+      # @see https://circleci.com/docs/2.0/caching/#npm-node
       - restore_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
-      - run: npm install
+          keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
+      - run: npm ci
       - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
+            - ~/usr/local/lib/node_modules # location depends on npm version
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
       - run:
           name: lint
           command: |
