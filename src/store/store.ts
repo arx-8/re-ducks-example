@@ -5,6 +5,7 @@ import {
   combineReducers,
   compose,
   createStore,
+  DeepPartial,
   Store,
 } from "redux"
 import immutableStateInvariantMiddleware from "redux-immutable-state-invariant"
@@ -21,7 +22,7 @@ export type RootState = Readonly<{
 }>
 
 export const configureStore = (
-  initialState: Partial<RootState> = {}
+  initialState: DeepPartial<RootState> = {}
 ): Store<RootState, AnyAction> => {
   const rootReducer = combineReducers<RootState>({
     todoAppOldRedux: todoAppOldReduxReducer,
