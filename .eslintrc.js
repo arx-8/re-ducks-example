@@ -63,7 +63,7 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-parameter-properties": "off",
 
-    // React Component の書き心地がとても悪くなるため
+    // React Component のボイラープレートコードを減らすため
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
