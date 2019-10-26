@@ -60,7 +60,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private readonly deleteTodo = (targetId: TodoId) => {
+  private readonly deleteTodo = (targetId: TodoId): void => {
     this.setState((prev) => {
       const next = prev.todoList.filter((t) => t.id !== targetId)
       return {
@@ -69,7 +69,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private readonly toggleTodoStatus = (targetId: TodoId) => {
+  private readonly toggleTodoStatus = (targetId: TodoId): void => {
     this.setState((prev) => {
       const next = [...prev.todoList]
       const found = next.find((t) => t.id === targetId)!
