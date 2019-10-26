@@ -10,6 +10,10 @@ import {
 import thunkMiddleWare from "redux-thunk"
 import { isDevelopment } from "src/constants/Env"
 import { todoAppAsyncReducer, TodoAppAsyncState } from "./todoAppAsync"
+import {
+  todoAppAsyncHooksReducer,
+  TodoAppAsyncHooksState,
+} from "./todoAppAsyncHooks"
 import { todoAppOldReduxReducer, TodoAppOldReduxState } from "./todoAppOldRedux"
 import { todoAppReDucksReducer, TodoAppReDucksState } from "./todoAppReDucks"
 
@@ -17,6 +21,7 @@ export type RootState = Readonly<{
   todoAppOldRedux: TodoAppOldReduxState
   todoAppReDucks: TodoAppReDucksState
   todoAppAsync: TodoAppAsyncState
+  todoAppAsyncHooks: TodoAppAsyncHooksState
 }>
 
 export const configureStore = (
@@ -26,6 +31,7 @@ export const configureStore = (
     todoAppOldRedux: todoAppOldReduxReducer,
     todoAppReDucks: todoAppReDucksReducer,
     todoAppAsync: todoAppAsyncReducer,
+    todoAppAsyncHooks: todoAppAsyncHooksReducer,
   })
 
   // Connect Chrome Redux DevTools, if installed.
