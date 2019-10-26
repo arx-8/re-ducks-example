@@ -1,6 +1,6 @@
-import * as todoAPIClient from "data/apis/TodoAPIClient"
-import { TodoId } from "domain/models/Todo"
-import { AppThunkAction } from "types/ReduxTypes"
+import * as todoAPIClient from "src/data/apis/TodoAPIClient"
+import { TodoId } from "src/domain/models/Todo"
+import { AppThunkAction } from "src/types/ReduxTypes"
 import * as actions from "./actions"
 
 export const addTodo = (payload: { label: string }): AppThunkAction => {

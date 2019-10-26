@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { TodoInput } from "components/molecules/TodoInput"
-import { TodoList } from "components/molecules/TodoList"
-import { VisibilityFilterInput } from "components/molecules/VisibilityFilterInput"
+import { Component, ReactNode } from "react"
+import { TodoInput } from "src/components/molecules/TodoInput"
+import { TodoList } from "src/components/molecules/TodoList"
+import { VisibilityFilterInput } from "src/components/molecules/VisibilityFilterInput"
 import {
   createTodoId,
   Todo,
   TodoId,
   VisibilityFilter,
-} from "domain/models/Todo"
-import { Component, ReactNode } from "react"
+} from "src/domain/models/Todo"
 
 type OwnProps = {
   children?: never
@@ -60,7 +60,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private readonly deleteTodo = (targetId: TodoId) => {
+  private readonly deleteTodo = (targetId: TodoId): void => {
     this.setState((prev) => {
       const next = prev.todoList.filter((t) => t.id !== targetId)
       return {
@@ -69,7 +69,7 @@ export class TodoAppOldPlainState extends Component<OwnProps, State> {
     })
   }
 
-  private readonly toggleTodoStatus = (targetId: TodoId) => {
+  private readonly toggleTodoStatus = (targetId: TodoId): void => {
     this.setState((prev) => {
       const next = [...prev.todoList]
       const found = next.find((t) => t.id === targetId)!

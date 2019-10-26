@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { CheckEmoji } from "components/atoms/CheckEmoji"
-import { DeleteEmoji } from "components/atoms/DeleteEmoji"
-import { EditEmoji } from "components/atoms/EditEmoji"
-import { Todo, TodoId } from "domain/models/Todo"
 import React, { useState } from "react"
-import { LightBulbEmoji } from "components/atoms/LightBulbEmoji"
+import { CheckEmoji } from "src/components/atoms/CheckEmoji"
+import { DeleteEmoji } from "src/components/atoms/DeleteEmoji"
+import { EditEmoji } from "src/components/atoms/EditEmoji"
+import { LightBulbEmoji } from "src/components/atoms/LightBulbEmoji"
+import { Todo, TodoId } from "src/domain/models/Todo"
 
 type OwnProps = {
   children?: never

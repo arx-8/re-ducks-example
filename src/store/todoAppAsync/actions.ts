@@ -1,5 +1,5 @@
-import { Todo, VisibilityFilter } from "domain/models/Todo"
-import { ActionCreator, ActionCreatorWithPayload } from "types/ReduxTypes"
+import { Todo, VisibilityFilter } from "src/domain/models/Todo"
+import { ActionCreator, ActionCreatorWithPayload } from "src/types/ReduxTypes"
 
 export const ActionTypes = {
   ADD_TODO_STARTED: "todoAppAsync/ADD_TODO_STARTED",

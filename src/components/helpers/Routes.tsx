@@ -1,13 +1,13 @@
-import { NotFound } from "components/pages/NotFound"
-import { Root } from "components/pages/Root"
-import { TodoAppAsync } from "components/pages/TodoAppAsync"
-import { TodoAppOldPlainState } from "components/pages/TodoAppOldPlainState"
-import { TodoAppOldRedux } from "components/pages/TodoAppOldRedux"
-import { TodoAppPlainState } from "components/pages/TodoAppPlainState"
-import { TodoAppReDucks } from "components/pages/TodoAppReDucks"
-import { RoutePath } from "constants/RoutePaths"
 import React from "react"
 import { Route, Switch } from "react-router-dom"
+import { NotFound } from "src/components/pages/NotFound"
+import { Root } from "src/components/pages/Root"
+import { TodoAppAsync } from "src/components/pages/TodoAppAsync"
+import { TodoAppOldPlainState } from "src/components/pages/TodoAppOldPlainState"
+import { TodoAppOldRedux } from "src/components/pages/TodoAppOldRedux"
+import { TodoAppPlainState } from "src/components/pages/TodoAppPlainState"
+import { TodoAppReDucks } from "src/components/pages/TodoAppReDucks"
+import { RoutePath } from "src/constants/RoutePaths"
 
 type OwnProps = {
   children?: never

@@ -1,11 +1,11 @@
-import { Routes } from "components/helpers/Routes"
-import { Header } from "components/organisms/Header"
-import { GlobalStyles } from "components/styles/GlobalStyles"
 import React from "react"
 import ReactDOM from "react-dom"
 import { Provider as ReduxProvider } from "react-redux"
 import { HashRouter as Router } from "react-router-dom"
-import { configureStore } from "store/store"
+import { Routes } from "src/components/helpers/Routes"
+import { Header } from "src/components/organisms/Header"
+import { GlobalStyles } from "src/components/styles/GlobalStyles"
+import { configureStore } from "src/store/store"
 import * as serviceWorker from "./serviceWorker"
 
 const reduxStore = configureStore(window.__REDUX_INITIAL_STATE__)

@@ -1,18 +1,18 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { TodoInput } from "components/molecules/TodoInput"
-import { TodoList } from "components/molecules/TodoList"
-import { VisibilityFilterInput } from "components/molecules/VisibilityFilterInput"
-import { Todo, TodoId, VisibilityFilter } from "domain/models/Todo"
 import React, { useEffect } from "react"
 import { connect, MapStateToProps } from "react-redux"
-import { RootState } from "store/store"
+import { Loading } from "src/components/atoms/Loading"
+import { TodoInput } from "src/components/molecules/TodoInput"
+import { TodoList } from "src/components/molecules/TodoList"
+import { VisibilityFilterInput } from "src/components/molecules/VisibilityFilterInput"
+import { Todo, TodoId, VisibilityFilter } from "src/domain/models/Todo"
+import { RootState } from "src/store/store"
 import {
   todoAppAsyncOperations,
   todoAppAsyncSelectors,
-} from "store/todoAppAsync"
-import { MapThunkDispatchToPropsFunction } from "types/ReduxTypes"
-import { Loading } from "components/atoms/Loading"
+} from "src/store/todoAppAsync"
+import { MapThunkDispatchToPropsFunction } from "src/types/ReduxTypes"
 
 type ReduxStateProps = {
   todoList: readonly Todo[]
