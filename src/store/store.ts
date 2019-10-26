@@ -7,8 +7,6 @@ import {
   DeepPartial,
   Store,
 } from "redux"
-import immutableStateInvariantMiddleware from "redux-immutable-state-invariant"
-import { createSerializableStateInvariantMiddleware } from "redux-starter-kit"
 import thunkMiddleWare from "redux-thunk"
 import { isDevelopment } from "src/constants/Env"
 import { todoAppAsyncReducer, TodoAppAsyncState } from "./todoAppAsync"
@@ -37,8 +35,10 @@ export const configureStore = (
   const middleWares = []
   middleWares.push(thunkMiddleWare)
   if (isDevelopment) {
-    middleWares.push(immutableStateInvariantMiddleware())
-    middleWares.push(createSerializableStateInvariantMiddleware())
+    middleWares.push(require("redux-immutable-state-invariant").default())
+    middleWares.push(
+      require("redux-starter-kit").createSerializableStateInvariantMiddleware()
+    )
   }
 
   const store = createStore(
