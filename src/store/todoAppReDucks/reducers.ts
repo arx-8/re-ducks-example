@@ -1,6 +1,6 @@
-import { createTodoId, Todo, VisibilityFilter } from "domain/models/Todo"
 import produce from "immer"
 import { Reducer } from "redux"
+import { createTodoId, Todo, VisibilityFilter } from "src/domain/models/Todo"
 import * as actions from "./actions"
 import { ActionTypes } from "./actions"
 

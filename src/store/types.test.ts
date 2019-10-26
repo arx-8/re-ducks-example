@@ -1,7 +1,7 @@
-import { toUniq } from "utils/ArrayUtils"
+import { toUniq } from "src/utils/ArrayUtils"
+import { ActionTypes as TodoAppAsyncActionTypes } from "./todoAppAsync/actions"
 import { ActionTypes as TodoAppOldReduxActionTypes } from "./todoAppOldRedux/actions"
 import { ActionTypes as TodoAppReDucksActionTypes } from "./todoAppReDucks/actions"
-import { ActionTypes as TodoAppAsyncActionTypes } from "./todoAppAsync/actions"
 
 describe("ActionType", () => {
   it("No duplicate definition", () => {

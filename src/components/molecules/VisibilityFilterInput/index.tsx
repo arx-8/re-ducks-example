@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { VisibilityFilter, VisibilityFilterValue } from "domain/models/Todo"
 import React from "react"
+import { VisibilityFilter, VisibilityFilterValue } from "src/domain/models/Todo"
 
 type OwnProps = {
   children?: never

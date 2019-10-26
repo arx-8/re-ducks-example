@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { TodoInput } from "components/molecules/TodoInput"
-import { TodoList } from "components/molecules/TodoList"
-import { VisibilityFilterInput } from "components/molecules/VisibilityFilterInput"
+import { Component, ReactNode } from "react"
+import { TodoInput } from "src/components/molecules/TodoInput"
+import { TodoList } from "src/components/molecules/TodoList"
+import { VisibilityFilterInput } from "src/components/molecules/VisibilityFilterInput"
 import {
   createTodoId,
   Todo,
   TodoId,
   VisibilityFilter,
-} from "domain/models/Todo"
-import { Component, ReactNode } from "react"
+} from "src/domain/models/Todo"
 
 type OwnProps = {
   children?: never

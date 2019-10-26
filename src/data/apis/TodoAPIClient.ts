@@ -1,4 +1,4 @@
-import { createTodoId, Todo, TodoId } from "domain/models/Todo"
+import { createTodoId, Todo, TodoId } from "src/domain/models/Todo"
 
 /*** *** *** for Fake API call *** *** ***/
 const sleep = (ms: number): Promise<void> => {

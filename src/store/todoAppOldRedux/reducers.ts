@@ -1,7 +1,7 @@
-import { createTodoId, Todo, VisibilityFilter } from "domain/models/Todo"
 import produce from "immer"
 import { Reducer } from "redux"
-import { FixMeAny } from "types/Utils"
+import { createTodoId, Todo, VisibilityFilter } from "src/domain/models/Todo"
+import { FixMeAny } from "src/types/Utils"
 import { ActionTypes } from "./actions"
 
 export type State = Readonly<{

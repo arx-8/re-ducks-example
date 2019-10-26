@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
-import { Todo, TodoId } from "domain/models/Todo"
 import React from "react"
+import { Todo, TodoId } from "src/domain/models/Todo"
 import { OneTodo } from "./OneTodo"
 
 type OwnProps = {
