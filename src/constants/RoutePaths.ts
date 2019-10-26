@@ -8,4 +8,5 @@ export const RoutePath = {
   TodoAppOldRedux: "/todo-app-old-redux",
   TodoAppReDucks: "/todo-app-re-ducks",
   TodoAppAsync: "/todo-app-async",
+  TodoAppAsyncHooks: "/todo-app-async-hooks",
 }
