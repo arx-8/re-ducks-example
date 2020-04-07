@@ -1,5 +1,6 @@
 import { toUniq } from "src/utils/ArrayUtils"
 import { ActionTypes as TodoAppAsyncActionTypes } from "./todoAppAsync/actions"
+import { ActionTypes as TodoAppAsyncHooksActionTypes } from "./todoAppAsyncHooks/actions"
 import { ActionTypes as TodoAppOldReduxActionTypes } from "./todoAppOldRedux/actions"
 import { ActionTypes as TodoAppReDucksActionTypes } from "./todoAppReDucks/actions"
 
@@ -11,6 +12,7 @@ describe("ActionType", () => {
       ...Object.values(TodoAppOldReduxActionTypes),
       ...Object.values(TodoAppReDucksActionTypes),
       ...Object.values(TodoAppAsyncActionTypes),
+      ...Object.values(TodoAppAsyncHooksActionTypes),
     ]
 
     // ## Act ##

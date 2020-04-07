@@ -26,6 +26,9 @@ export const Header: React.FC<OwnProps> = () => {
       <Link css={[link, behind]} to={RoutePath.TodoAppAsync}>
         TodoApp (re-ducks + async)
       </Link>
+      <Link css={[link, behind]} to={RoutePath.TodoAppAsyncHooks}>
+        TodoApp (re-ducks + async + hooks)
+      </Link>
     </header>
   )
 }

@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c2f341fd-8d08-41f4-8a97-622020bd1584/deploy-status)](https://app.netlify.com/sites/focused-bhabha-aa792f/deploys)
 
-* * *
+---
 
 # re-ducks example
 
@@ -13,13 +13,14 @@ These are history of React state management design in 2019.
 
 ## Stack
 
-| Live demo                                                                                       | State management                                         |
-| ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| 1. [TodoApp (Old plain state)](https://re-ducks-example.netlify.com/#/todo-app-old-plain-state) | React state (class component)                            |
-| 2. [TodoApp (Plain state)](https://re-ducks-example.netlify.com/#/todo-app-plain-state)         | React state (React Hooks)                                |
-| 3. [TodoApp (Old design redux)](https://re-ducks-example.netlify.com/#/todo-app-old-redux)      | Redux (Directly dispatch)                                |
-| 4. [TodoApp (re-ducks)](https://re-ducks-example.netlify.com/#/todo-app-re-ducks)               | Redux (re-ducks)                                         |
-| 5. [TodoApp (re-ducks + async)](https://re-ducks-example.netlify.com/#/todo-app-async)          | Redux (re-ducks) + async (**_Sounds good & Recommend_**) |
+| Live demo                                                                                            | State management                                                 |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 1. [TodoApp (Old plain state)](https://re-ducks-example.netlify.com/#/todo-app-old-plain-state)      | React state (class component)                                    |
+| 2. [TodoApp (Plain state)](https://re-ducks-example.netlify.com/#/todo-app-plain-state)              | React state (React Hooks)                                        |
+| 3. [TodoApp (Old design redux)](https://re-ducks-example.netlify.com/#/todo-app-old-redux)           | Redux (Directly dispatch)                                        |
+| 4. [TodoApp (re-ducks)](https://re-ducks-example.netlify.com/#/todo-app-re-ducks)                    | Redux (re-ducks)                                                 |
+| 5. [TodoApp (re-ducks + async)](https://re-ducks-example.netlify.com/#/todo-app-async)               | Redux (re-ducks) + async                                         |
+| 5. [TodoApp (re-ducks + async + hooks)](https://re-ducks-example.netlify.com/#/todo-app-async-hooks) | Redux (re-ducks) + async + hooks (**_Sounds good & Recommend_**) |
 
 ### Inspired design patterns
 
